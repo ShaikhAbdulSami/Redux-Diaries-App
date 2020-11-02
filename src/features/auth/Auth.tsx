@@ -46,56 +46,55 @@ const Auth: FC = () => {
   };
 
   return (
-    <div className="auth">
-      <div className="card">
-        <form onSubmit={handleSubmit(submitForm)}>
-          <div className="inputWrapper">
-            <input ref={register} name="username" placeholder="Username" />
-            {errors && errors.username && (
-              <p className="error">{errors.username.message}</p>
-            )}
-          </div>
+    <><h1 className="wel">Welcome to Shaikh Diary App</h1>
+      <div className="auth">
+        <div className="card">
+          <form onSubmit={handleSubmit(submitForm)}>
+            <div className="inputWrapper">
+              <input ref={register} name="username" placeholder="Username" />
+              {errors && errors.username && (
+                <p className="error">{errors.username.message}</p>
+              )}
+            </div>
 
-          <div className="inputWrapper">
-            <input
-              ref={register}
-              name="password"
-              type="password"
-              placeholder="Password"
-            />
-            {errors && errors.password && (
-              <p className="error">{errors.password.message}</p>
-            )}
-          </div>
-
-          {!isLogin && (
             <div className="inputWrapper">
               <input
                 ref={register}
-                name="email"
-                placeholder="Email (optional)"
-              />
-              {errors && errors.email && (
-                <p className="error">{errors.email.message}</p>
+                name="password"
+                type="password"
+                placeholder="Password" />
+              {errors && errors.password && (
+                <p className="error">{errors.password.message}</p>
               )}
             </div>
-          )}
 
-          <div className="inputWrapper">
-            <button type="submit" disabled={loading}>
-              {isLogin ? 'Login' : 'Create account'}
-            </button>
-          </div>
+            {!isLogin && (
+              <div className="inputWrapper">
+                <input
+                  ref={register}
+                  name="email"
+                  placeholder="Email (optional)" />
+                {errors && errors.email && (
+                  <p className="error">{errors.email.message}</p>
+                )}
+              </div>
+            )}
 
-          <p
-            onClick={() => setIsLogin(!isLogin)}
-            style={{ cursor: 'pointer', opacity: 0.7 }}
-          >
-            {isLogin ? 'No account? Create one' : 'Already have an account?'}
-          </p>
-        </form>
-      </div>
-    </div>
+            <div className="inputWrapper">
+              <button type="submit" disabled={loading}>
+                {isLogin ? 'Login' : 'Create account'}
+              </button>
+            </div>
+
+            <p
+              onClick={() => setIsLogin(!isLogin)}
+              style={{ cursor: 'pointer', opacity: 0.7 }}
+            >
+              {isLogin ? 'No account? Create one' : 'Already have an account?'}
+            </p>
+          </form>
+        </div>
+      </div></>
   );
 };
 

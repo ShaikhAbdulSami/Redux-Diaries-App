@@ -43,11 +43,11 @@ const Diaries: FC = () => {
       progressSteps: ['1', '2'],
     }).queue([
       {
-        titleText: 'Diary title',
+        titleText: 'Diary Title',
         input: 'text',
       },
       {
-        titleText: 'Private or public diary?',
+        titleText: 'Private or Public Diary?',
         input: 'radio',
         inputOptions: {
           private: 'Private',
@@ -89,7 +89,7 @@ const Diaries: FC = () => {
           <DiaryEntriesList />
         </Route>
         <Route path="/">
-          <button onClick={createDiary}>Create New</button>
+          <button onClick={createDiary}>Create New Diary</button>
           {diaries.map((diary, idx) => (
             <DiaryTile key={idx} diary={diary} />
           ))}

@@ -83,6 +83,7 @@ const Editor: FC = () => {
         ) : (
           <input
             value={editedEntry?.title ?? ''}
+            placeholder="TITLE"
             disabled={!canEdit}
             onChange={(e) => {
               if (editedEntry) {
@@ -106,7 +107,7 @@ const Editor: FC = () => {
         <>
           <textarea
             disabled={!canEdit}
-            placeholder="Supports markdown!"
+            placeholder="Description"
             value={editedEntry?.content ?? ''}
             onChange={(e) => {
               if (editedEntry) {

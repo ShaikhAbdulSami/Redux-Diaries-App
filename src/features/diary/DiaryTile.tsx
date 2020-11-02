@@ -65,7 +65,7 @@ const DiaryTile: FC<Props> = (props) => {
           <span>{diary.title}</span>
         )}
       </h2>
-      <p className="subtitle">{totalEntries ?? '0'} saved entries</p>
+      <p className="subtitle">{totalEntries ?? '0'} Saved Entries</p>
       <div style={{ display: 'flex' }}>
         <button
           style={buttonStyle}
@@ -75,7 +75,7 @@ const DiaryTile: FC<Props> = (props) => {
             dispatch(setCurrentlyEditing(null));
           }}
         >
-          Add New Entry
+          Add New
         </button>
         <Link to={`diary/${diary.id}`} style={{ width: '100%' }}>
           <button className="secondary" style={buttonStyle}>
